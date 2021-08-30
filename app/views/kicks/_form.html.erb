@@ -1,0 +1,32 @@
+<%= form_with(model: kick) do |form| %>
+  <% if kick.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kick.errors.count, "error") %> prohibited this kick from being saved:</h2>
+
+      <ul>
+        <% kick.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :brand %>
+    <%= form.text_field :brand %>
+  </div>
+
+  <div class="field">
+    <%= form.label :style %>
+    <%= form.text_field :style %>
+  </div>
+
+  <div class="field">
+    <%= form.label :size %>
+    <%= form.text_field :size %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

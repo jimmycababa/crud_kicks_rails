@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @kick.brand %>
+</p>
+
+<p>
+  <strong>Style:</strong>
+  <%= @kick.style %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @kick.size %>
+</p>
+
+<%= link_to 'Edit', edit_kick_path(@kick) %> |
+<%= link_to 'Back', kicks_path %>

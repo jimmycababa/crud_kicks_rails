@@ -1,0 +1,2 @@
+class Kick < ApplicationRecord
+end

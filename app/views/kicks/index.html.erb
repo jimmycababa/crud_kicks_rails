@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Kicks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th>Style</th>
+      <th>Size</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kicks.each do |kick| %>
+      <tr>
+        <td><%= kick.brand %></td>
+        <td><%= kick.style %></td>
+        <td><%= kick.size %></td>
+        <td><%= link_to 'Show', kick %></td>
+        <td><%= link_to 'Edit', edit_kick_path(kick) %></td>
+        <td><%= link_to 'Destroy', kick, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kick', new_kick_path %>
