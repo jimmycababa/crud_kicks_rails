@@ -23,37 +23,43 @@ class KicksController < ApplicationController
   def create
     @kick = Kick.new(kick_params)
 
-    respond_to do |format|
+    # respond_to do |format|
       if @kick.save
-        format.html { redirect_to @kick, notice: "Kick was successfully created." }
-        format.json { render :show, status: :created, location: @kick }
+        redirect_to @kick, notice: "Kick was successfully created."
+        # format.html { redirect_to @kick, notice: "Kick was successfully created." }
+        # format.json { render :show, status: :created, location: @kick }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @kick.errors, status: :unprocessable_entity }
+        render :new, status: :unprocessable_entity 
+
+        # format.html { render :new, status: :unprocessable_entity }
+        # format.json { render json: @kick.errors, status: :unprocessable_entity }
       end
-    end
+    # end
   end
 
   # PATCH/PUT /kicks/1 or /kicks/1.json
   def update
-    respond_to do |format|
+    # respond_to do |format|
       if @kick.update(kick_params)
-        format.html { redirect_to @kick, notice: "Kick was successfully updated." }
-        format.json { render :show, status: :ok, location: @kick }
+        redirect_to @kick, notice: "Kick was successfully updated."
+        # format.html { redirect_to @kick, notice: "Kick was successfully updated." }
+        # format.json { render :show, status: :ok, location: @kick }
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @kick.errors, status: :unprocessable_entity }
+        render :edit, status: :unprocessable_entity
+        # format.html { render :edit, status: :unprocessable_entity }
+        # format.json { render json: @kick.errors, status: :unprocessable_entity }
       end
-    end
+    # end
   end
 
   # DELETE /kicks/1 or /kicks/1.json
   def destroy
     @kick.destroy
-    respond_to do |format|
-      format.html { redirect_to kicks_url, notice: "Kick was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to kicks_url, notice: "Kick was successfully destroyed."
+    # respond_to do |format|
+      # format.html { redirect_to kicks_url, notice: "Kick was successfully destroyed." }
+      # format.json { head :no_content }
+    # end
   end
 
   private
