@@ -1,7 +1,7 @@
-# this is inherting all the methods from active record
+# this a wrapper around the db. we can use this to query the db and see what users we have
 class User < ApplicationRecord
-  has_many :kicks
-end
+    has_secure_password
 
-# class Kick < ApplicationRecord
-# end
+    validates :email, presence: true
+    has_many :kicks
+end
