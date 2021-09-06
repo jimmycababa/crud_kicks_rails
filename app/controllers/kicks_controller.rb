@@ -2,8 +2,9 @@ class KicksController < ApplicationController
   before_action :set_kick, only: %i[ show edit update destroy ]
 
   # GET /kicks or /kicks.json
+  # .all is an active record method that uses active record to talk to the database ORM (object relational mapper), which is the interface between the programming language and the database to communicate with each other.
   def index
-    @kicks = Kick.all
+    @kicks = Kick.all.limit(3)
   end
 
   # GET /kicks/1 or /kicks/1.json
@@ -11,6 +12,7 @@ class KicksController < ApplicationController
   end
 
   # GET /kicks/new
+  # get req to run the new method. defines the variable @kick to be Kick.new. sends that variable to new.html.erb (views). sees the variable and renders the form on the page.
   def new
     @kick = Kick.new
   end
@@ -20,7 +22,7 @@ class KicksController < ApplicationController
   end
 
   # POST /kicks or /kicks.json
-  def create
+  def create  
     @kick = Kick.new(kick_params)
 
     # respond_to do |format|
