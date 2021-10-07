@@ -4,7 +4,7 @@ class KicksController < ApplicationController
   # GET /kicks or /kicks.json
   # .all is an active record method that uses active record to talk to the database ORM (object relational mapper), which is the interface between the programming language and the database to communicate with each other.
   def index
-    @kicks = Kick.all
+    @kicks = Kick.kick_size
   end
 
   # GET /kicks/1 or /kicks/1.json

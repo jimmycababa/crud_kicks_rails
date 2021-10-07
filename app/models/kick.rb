@@ -1,7 +1,7 @@
 class Kick < ApplicationRecord
 #   belongs_to :user
 
-  scope :white, -> { where(color: "white") }
+  scope :kick_size, -> { where("size > 10") }
 end
 
 # > Kick.white.limit(2)
